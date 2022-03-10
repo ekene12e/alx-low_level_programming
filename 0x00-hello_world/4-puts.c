@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-/*
- ** main - This prints \"Programming is like a multilingual blockon the standard output\"
- * *Return : 0 if exited prperly, non zero otherwise
+/**
+ * main - prints the phrase \"Programming is like building a multilingual puzzle\"
+ * Return : 0 if exited properly, non zero otherwise
  *
  *
  */
