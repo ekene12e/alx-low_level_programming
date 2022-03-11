@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
-*main -
+/**
+*main - Describes the main function
+*
 *Description:
 *Return: 0
 */
