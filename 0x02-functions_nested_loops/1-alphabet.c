@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-*main - Describes the main function
+*print_alphabet - Describes the main function
 *
 *Description:
-*Return: 0
+*Return: void
 */
 void print_alphabet(void)
 {
@@ -12,6 +12,6 @@ void print_alphabet(void)
 	for(ch = 'a'; ch <= 'z'; ch++)
 	{
 		_putchar(ch);
-		_putchar('\n');
 	}
+		_putchar('\n');
 }
