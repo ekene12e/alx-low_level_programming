@@ -1,5 +1,5 @@
 #include "main.h"
-i/**
+/**
 *_islower - Describes the main function
 *
 *Description:
