@@ -3,10 +3,11 @@ i/**
 *_islower - Describes the main function
 *
 *Description:
-*Return: void
+*Return: int;
 */
 int _islower(int c)
 {
+	
 	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
