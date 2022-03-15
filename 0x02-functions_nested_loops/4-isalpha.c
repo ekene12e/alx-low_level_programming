@@ -6,7 +6,7 @@
 *@c: is the parameter
 * Return: int;
 */
-int _islower(int c)
+int _isalpha(int c)
 {
 	if (c >= 'a' && c <= 'Z')
 	{
