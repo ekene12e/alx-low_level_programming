@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_islower - Describes the main function
+*_isalpha - Describes the main function
 *
 *Description:
 *@c: is the parameter
