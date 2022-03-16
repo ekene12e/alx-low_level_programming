@@ -2,18 +2,16 @@
 
 /**
 * main - causes an infinite loop
-*Description: some texts
-*printf - prints something
 * Return: 0
 */
 
 int main(void)
 {
-	int i;
-
-	printf("Infinite loop incoming :(\n");
+        int i;
 /**
-*	int i = 0;
+*	printf("Infinite loop incoming :(\n");
+*
+*	i = 0;
 *
 *	while (i < 10)
 *	{
