@@ -2,7 +2,7 @@
 /**
 *main - prints fizz or buzz or fizzbuzz
 *
-*Return: void
+*Return: 0
 */
 int main(void)
 {
