@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
 *more_numbers - prints 1 - 14 x10 times
 *
 *Return: void
