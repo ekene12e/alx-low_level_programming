@@ -1,7 +1,6 @@
 #include "main.h"
-/*
-*more_numbers - prints x10 times
-*
+/**
+*more_numbers - prints 1 - 14 x10 times
 *Description: some text
 *Return: void
 */
