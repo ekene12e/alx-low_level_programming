@@ -1,11 +1,11 @@
 #include "main.h"
 /**
-*print_line - prints a line
+*print_diagonal - prints a line
 *
 *@n: no of dashes
 *Return: void
 */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	if (n > 0)
 	{
