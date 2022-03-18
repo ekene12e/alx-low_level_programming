@@ -8,9 +8,9 @@
 void print_square(int n)
 {
 	int i, j;
-	
+
 	if (n > 0)
-	{	
+	{
 	for (i = 1; i <= n; i++)
 	{
 		for (j = 1; j <= n; j++)
@@ -22,5 +22,5 @@ void print_square(int n)
 	}
 	else
 		_putchar('\n');
-	}
 }
+
