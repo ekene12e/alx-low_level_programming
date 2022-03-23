@@ -20,8 +20,9 @@ void puts_half( char *str)
 
 		for (j = i/2; j <= len; j++)
 		{
-			_putchar(str[(j-1)]);
+			_putchar(str[(j)]);
 		}
+	_putchar('\n');
 	}
 	else
 	{
@@ -32,5 +33,6 @@ void puts_half( char *str)
 	{
 	 _putchar(str[j]);
 	}
+	_putchar('\n');
 	}
 }
