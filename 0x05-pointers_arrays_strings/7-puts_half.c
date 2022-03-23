@@ -26,12 +26,12 @@ void puts_half( char *str)
 	}
 	else
 	{
-	int n = len / 2;
+	int n = (len - 1)/ 2;
 	int j;
 
 	for (j = n; j <= len; j++)
 	{
-	 _putchar(str[(j + 1)]);
+	 _putchar(str[(j)]);
 	}
 	_putchar('\n');
 	}
