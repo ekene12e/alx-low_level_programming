@@ -4,6 +4,7 @@
 *@dest: destination
 *@src: memory to be copied
 *@n: number of time
+*Return: dest
 */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
