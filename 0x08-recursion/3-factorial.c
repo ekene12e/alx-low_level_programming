@@ -2,7 +2,7 @@
 
 /**
  * factorial - returns the length of a string
- * @n string to calculate the length of
+ * @n: string to calculate the length of
  *
  * Return: integer multiple
  */
