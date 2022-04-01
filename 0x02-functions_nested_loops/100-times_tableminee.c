@@ -6,6 +6,7 @@
 *@a; parameter for sub
 *Return: void
 */
+void print_numbermorethan100(int b);
 void print_numbertens(int a);
 void print_times_table(int n)
 {
@@ -24,13 +25,7 @@ void print_times_table(int n)
 			}
 			else if (m >= 100)
 			{
-				_putchar(' ');
-				_putchar((m / 100) + '0');
-				if ((m - 100) > 9)
-					_putchar(((m - 100) / 10) + '0');
-				else
-					 _putchar(0 + '0');
-				_putchar(((m - 100) % 10) + '0');
+				print_numbermorethan100(m);		
 			}
 			else
 			{
@@ -58,4 +53,15 @@ _putchar(' ');
 _putchar(' ');
 _putchar((a / 10) + '0');
 _putchar((a % 10) + '0');
+}
+
+void printnumbermorethan100(int b)
+{
+	_putchar(' ');
+	_putchar((b / 100) + '0');
+	if ((b - 100) > 9)
+            _putchar(((b - 100) / 10) + '0');
+	else
+	_putchar(0 + '0');
+	_putchar(((b - 100) % 10) + '0');
 }
