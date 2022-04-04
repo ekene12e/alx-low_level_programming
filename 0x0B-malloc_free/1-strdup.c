@@ -25,5 +25,5 @@ char *_strdup(char *str)
 		mem[i] = str[i];
 	}
 	mem[str_len] = '\0';
-	return (p);
+	return (mem);
 }
