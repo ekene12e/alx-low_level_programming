@@ -11,7 +11,7 @@ char *_strdup(char *str)
 		return ('\0');
 
 	char *p;
-	int i;
+	long unsigned int i;
 
 	p = malloc(sizeof(str));
 	
