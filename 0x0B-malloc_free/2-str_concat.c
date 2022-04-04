@@ -1,57 +1,45 @@
 #include <stdlib.h>
 
 /**
- * _str_concat - Copies a string to new allocated space in memory
+ * str_concat - Concatenate two strings
  *
- *@s1: The base string
- *@s2: added string
- *Return: Pointer to allocated memory containing copy of @str (SUCCESS)
- *OR NULL if @str is empty (FAILURE) OR
- *NUL if insufficient memory was available
+ * @s1: A string to be concatenated
+ *
+ * @s2: A string to be concatenated
+ *
+ * Return: Pointer to newly allocated memory
+ * which is equal to @s1 + @s2 (SUCCESS) OR
+ * NULL (FAILURE)
  */
+
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int s1_len = 0;
-	unsigned int s2_len = 0;
-	unsigned int mem_len = 0;
+	unsigned int s1_length = 0;
+	unsigned int s2_length = 0;
+	char *alloc_mem;
 	unsigned int i, j;
-	char *mem;
 
-	/*if (s1 == NULL)*/
-	/*	s1_len = 1;*/
-	/*if (s2 == NULL)*/
-		/*s2_len = 1;*/
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[s1_len] != '\0')
-	{
-		s1_len++;
-	}
-	while (s2[s2_len] != '\0')
-        {
-		s2_len++;
-	}
+	while (*(s1 + s1_length) != '\0')
+		s1_length++;
 
-	if (s1_len == 0 && s2_len == 0)
-	{
+	while (*(s2 + s2_length) != '\0')
+		s2_length++;
+
+	alloc_mem = malloc(1 + (s1_length * sizeof(*s1)) + (s2_length * sizeof(*s2)));
+	if (alloc_mem == NULL)
 		return ('\0');
-	}
 
-	mem_len = s1_len + s2_len + 2;
-	mem = malloc(mem_len * sizeof(char));
+	for (i = 0; i < s1_length; i++)
+		alloc_mem[i] = *(s1 + i);
 
-	for (i = 0; i <= s1_len; i++)
-	{
-		mem[i] = s1[i];
-	}
+	for (j = 0; j < s2_length; j++, i++)
+		alloc_mem[i] = *(s2 + j);
 
-	for (i = (s1_len + 1), j = 0; i <= mem_len; i++, j++)
-	{
-		mem[i] = s2[j];
-	}
-	mem[mem_len + 1] = '\0';
-	return (mem);
+	return (alloc_mem);
 }
