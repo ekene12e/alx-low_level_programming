@@ -43,7 +43,7 @@ char *str_concat(char *s1, char *s2)
 		mem[i] = s1[i];
 	}
 
-	for (i = s1_len + 1; j = 0; i <= mem_len; i++; j++)
+	for (i = (s1_len + 1), j = 0; i <= mem_len; i++, j++)
 	{
 		mem[i] = s2[j];
 	}
