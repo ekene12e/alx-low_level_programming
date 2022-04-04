@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	 str_len++;
 	}
 
-	mem = malloc(str_len * (sizeof(*str)));
+	mem = malloc((str_len + 1) * (sizeof(*str)));
 	
 	for (i = 0; i <= str_len; i++)
 	{
