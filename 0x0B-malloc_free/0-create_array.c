@@ -4,10 +4,11 @@
  *create_array - creates an array
  *@size: size of array
  *@c: the array
+ *Return: a new array or null
  */
 char *create_array(unsigned int size, char c)
 {
-	if (c && size > 0)
+	if ((c || '\0') && size > 0)
 	{
 	char *arr = (char *)malloc(size);
 	unsigned int i;
