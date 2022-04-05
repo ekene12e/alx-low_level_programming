@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 /**
  *alloc_grid - prints a 2D array
