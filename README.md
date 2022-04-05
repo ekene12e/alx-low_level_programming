@@ -3,7 +3,7 @@
 *This is the low level programming repository*
 *It contains my alx projects on the C language*
 
-Each project contains codes for the tasks described under the project. Each of the projects tests understanding a particular concept in the C language
+Each project contains codes for the tasks described under the project. Each of the projects tests your understanding of a particular concept in the `C language`
 
 ## Projects
 * [0x01-Hello world](https://github.com/ekene12e/alx-low_level_programming/tree/master/0x00-hello_world)
