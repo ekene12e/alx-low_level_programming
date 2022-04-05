@@ -1,1 +1,3 @@
-This is the first c project
+# This is the first c project
+
+It tests basic understanding of the language
