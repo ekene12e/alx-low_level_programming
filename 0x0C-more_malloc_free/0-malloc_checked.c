@@ -3,10 +3,10 @@
 #include <stddef.h>
 /**
  *malloc_checked - allocates a given memory space
- *@b size of the memory
+ *@b: size of the memory
  *Return: pointer to the The memory
  */
-void *malloc_checked(long unsigned int b)
+void *malloc_checked(unsigned long int b)
 {
 	char *arr;
 
