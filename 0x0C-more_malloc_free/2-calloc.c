@@ -6,7 +6,7 @@
  *@nmemb: number of members
  *@size: size of each member
  *
- *Return: 
+ *Return: Returns the allocated memory
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
