@@ -9,7 +9,7 @@
  *
  *Description: A dog prototype
  */
-struct dog 
+struct dog
 	{
 	char *name;
 	float age;
