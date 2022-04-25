@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- *add_nodeint_end - prints a linked list
+ *pop_listint - deletes the head of a linked list
  *@head: head of the list
- *@n: integer element of the node
- *Return: Address of the added node or NULL
+ *
+ *Return: n data of the deleted head
  *Author - Ekene Ezema
  *
  *
@@ -22,5 +22,5 @@ int pop_listint(listint_t **head)
 	n_data = (*head)->n;
 	free(*head);
 	*head = tmp;
-	return(n_data);
+	return (n_data);
 }
