@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd, rd, wd;
+	ssize_t fd, read_bytes, written_bytes;
 	char *buff;
 
 	if (filename == NULL)
@@ -22,19 +22,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	lseek(fd, 0, SEEK_SET);
 	buff = malloc(letters * sizeof(char));
-	rd = read(fd, buff, letters);
+	read_bytes = read(fd, buff, letters);
 	close(fd);
-	if (rd < 0)
+	if (read_bytes < 0)
 	{
 		free(buff);
 		return (0);
 	}
-	wd = write(STDOUT_FILENO, buff, rd);
-	if (wd < 0 || wd < rd)
+	written_bytes = write(STDOUT_FILENO, buff, read_bytes);
+	if (written_bytes < 0 || written_bytes < read_bytes)
 	{
 		return (0);
 		free(buff);
 	}
-	return (wd);
+	return (written_bytes);
 	free(buff);
 }
