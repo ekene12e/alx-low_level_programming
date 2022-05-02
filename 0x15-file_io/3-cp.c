@@ -11,10 +11,10 @@
 void read_from_into(const char *file_from, const char *file_to)
 {
 	int fd, r, w, c;
-	char *buff[1024];
+	char *buff[BUFSIZ];
 
-	fd = open(file_from, O_RDWR);
-	r = read(fd, buff, 1024);
+	fd = open(file_from, O_RDONLY);
+	r = read(fd, buff, BUFSIZ);
 		if (fd < 0 || r < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
@@ -26,8 +26,8 @@ void read_from_into(const char *file_from, const char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 			exit(100);
 		}
-		fd = open(file_to, O_CREAT | O_RDWR | O_APPEND | O_TRUNC, 0664);
-		w = write(fd, buff, 1024);
+		fd = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+		w = write(fd, buff, BUFSIZ);
 		if (fd < 0 || w < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
