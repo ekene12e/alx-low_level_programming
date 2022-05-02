@@ -17,7 +17,7 @@ int create_file(const char *filename, char *text_content)
 	if (text_content)
 		{
 		lseek(file_descriptor, 0, SEEK_SET);
-		written_bytes = write(file_descriptor, text_content, sizeof(text_content));
+		written_bytes = write(file_descriptor, text_content, sizeof(text_content) - 1);
 		}
 	if (written_bytes < sizeof(text_content))
 	{
