@@ -1,60 +1,53 @@
 #include "main.h"
-/**
- *read_from_into - reads to the content
- *of one file and writes into another file
- *
- *@file_from: file to be written from
- *@file_to: File to be written to
- *
- * Author: Ekene Ezema
- */
-void read_from_into(const char *file_from, const char *file_to)
-{
-	int fd, r, w, c;
-	char *buff[BUFSIZ];
 
-	fd = open(file_from, O_RDONLY);
-	r = read(fd, buff, BUFSIZ);
-		if (fd < 0 || r < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
-		c = close(fd);
-		if (c < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-			exit(100);
-		}
-		fd = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-		w = write(fd, buff, BUFSIZ);
-		if (fd < 0 || w < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-		}
-		c = close(fd);
-		if (c < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-			exit(100);
-		}
-}
 /**
- *main - tests the function
- *@ac: number of command line arguments
- *@av: command line arguments
+ * main - copies the content of a file to another file
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments
  *
- *Return: zero always
- *Author: Ekene Ezema
+ * Return: Always 0 (Success)
+ * Ekene Ezema
  */
-int main(int ac, char *av[])
+int main(int argc, char *argv[])
 {
-	if (ac != 3)
+	int fd_r, fd_w, r, a, b;
+	char buf[BUFSIZ];
+
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	read_from_into(av[1], av[2]);
+	fd_r = open(argv[1], O_RDONLY);
+	if (fd_r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((r = read(fd_r, buf, BUFSIZ)) > 0)
+	{
+		if (fd_w < 0 || write(fd_w, buf, r) != r)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(fd_r);
+			exit(99);
+		}
+	}
+	if (r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	a = close(fd_r);
+	b = close(fd_w);
+	if (a < 0 || b < 0)
+	{
+		if (a < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
+		if (b < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+		exit(100);
+	}
 	return (0);
 }
