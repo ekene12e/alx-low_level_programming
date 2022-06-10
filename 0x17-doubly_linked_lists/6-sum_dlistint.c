@@ -4,7 +4,6 @@
  *@head: head of the list
  *
  *Return: sum of n or 0
- *@Author: Ekene Ezema
  */
 int sum_dlistint(dlistint_t *head)
 {
