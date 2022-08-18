@@ -3,4 +3,4 @@
 all: school
 
 school:
-	gcc *.c *.h -o school
+	gcc main.c m.h school.c -o school
