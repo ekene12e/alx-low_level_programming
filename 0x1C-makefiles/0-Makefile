@@ -4,4 +4,3 @@ all: school
 
 school:
 	gcc *.c *.h -o school
-
