@@ -1,0 +1,7 @@
+# _*_ MakeFile _*_
+
+all: school
+
+school:
+	gcc *.c *.h -o school
+
