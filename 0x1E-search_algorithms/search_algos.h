@@ -9,12 +9,6 @@ int binary_search(int *array, size_t size, int value);
 int help_binary(int *array, int value, size_t lo, size_t hi);
 void array_print(int *array, size_t lo, size_t hi);
 int jump_search(int *array, size_t size, int value);
-int jump_search(int *array, size_t size, int value);
-int interpolation_search(int *array, size_t size, int value);
-int exponential_search(int *array, size_t size, int value);
-int advanced_binary(int *array, size_t size, int value);
-listint_t *jump_list(listint_t *list, size_t size, int value);
-skiplist_t *linear_skip(skiplist_t *list, int value);
 
 /**
  * struct listint_s - singly linked list
@@ -52,4 +46,9 @@ typedef struct skiplist_s
 	struct skiplist_s *express;
 } skiplist_t;
 
+int interpolation_search(int *array, size_t size, int value);
+int exponential_search(int *array, size_t size, int value);
+int advanced_binary(int *array, size_t size, int value);
+listint_t *jump_list(listint_t *list, size_t size, int value);
+skiplist_t *linear_skip(skiplist_t *list, int value);
 #endif
