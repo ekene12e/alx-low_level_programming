@@ -15,10 +15,10 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-    if (!array || size == 0)
-        return (-1);
+	if (!array || size == 0)
+		return (-1);
 
-    return (help_binary(array, value, 0, size - 1));
+	return (help_binary(array, value, 0, size - 1));
 }
 
 /**
@@ -34,20 +34,20 @@ int binary_search(int *array, size_t size, int value)
  */
 int help_binary(int *array, int value, size_t lo, size_t hi)
 {
-    size_t mid;
+	size_t mid;
 
-    array_print(array, lo, hi);
-    if (hi == lo && array[lo] != value)
-        return (-1);
+	array_print(array, lo, hi);
+	if (hi == lo && array[lo] != value)
+		return (-1);
 
-    mid = ((hi - lo) / 2) + lo;
-    if (array[mid] == value)
-        return (mid);
-    if (array[mid] < value)
-        return (help_binary(array, value, mid + 1, hi));
-    if (array[mid] > value)
-        return (help_binary(array, value, lo, mid - 1));
-    return (-1);
+	mid = ((hi - lo) / 2) + lo;
+	if (array[mid] == value)
+		return (mid);
+	if (array[mid] < value)
+		return (help_binary(array, value, mid + 1, hi));
+	if (array[mid] > value)
+		return (help_binary(array, value, lo, mid - 1));
+	return (-1);
 }
 
 /**
@@ -58,14 +58,14 @@ int help_binary(int *array, int value, size_t lo, size_t hi)
  */
 void array_print(int *array, size_t lo, size_t hi)
 {
-    size_t i;
+	size_t i;
 
-    printf("Searching in array: ");
-    for (i = lo; i <= hi; i++)
-    {
-        printf("%d", array[i]);
-        if (i < hi)
-            printf(", ");
-    }
-    printf("\n");
+	printf("Searching in array: ");
+	for (i = lo; i <= hi; i++)
+	{
+		printf("%d", array[i]);
+		if (i < hi)
+			printf(", ");
+	}
+	printf("\n");
 }
